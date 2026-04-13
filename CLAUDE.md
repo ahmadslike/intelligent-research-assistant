@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-**Intelligent Research Assistant** — an early-stage project. The repository currently contains only this file and a README; no code, tooling, or architecture has been established yet.
+**Intelligent Research Assistant** — an early-stage project. No stack, tooling, or application code exists yet.
 
-Once the stack and structure are decided, update this file with:
+When the stack and structure are established, update this file with:
 - Build, lint, and test commands (including how to run a single test)
-- How to start a local dev server
-- High-level architecture and data-flow overview
+- How to start the dev server
+- High-level architecture and data-flow overview (what the major components are and how they connect)

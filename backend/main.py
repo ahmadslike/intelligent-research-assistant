@@ -2,11 +2,15 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+from rag.rag_api import router as rag_router
+
 app = FastAPI(
     title="Intelligent Research Assistant",
     description="RAG + Multi-Agent Research System",
     version="0.1.0"
 )
+
+app.include_router(rag_router)
 
 # شو هو BaseModel؟
 # تخيّل نموذج تعبئة — يحدد شو البيانات المطلوبة ونوعها

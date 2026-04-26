@@ -8,7 +8,8 @@
       "Bash(curl:*)",
       "Bash(C:/Users/HP/Desktop/intelligent-research-assistant/venv/Scripts/pip show:*)",
       "Bash(C:/Users/HP/Desktop/intelligent-research-assistant/venv/Scripts/python.exe -c ':*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(xargs wc:*)"
     ]
   }
 }

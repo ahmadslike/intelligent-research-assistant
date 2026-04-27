@@ -9,7 +9,12 @@
       "Bash(C:/Users/HP/Desktop/intelligent-research-assistant/venv/Scripts/pip show:*)",
       "Bash(C:/Users/HP/Desktop/intelligent-research-assistant/venv/Scripts/python.exe -c ':*)",
       "Bash(python:*)",
-      "Bash(xargs wc:*)"
+      "Bash(xargs wc:*)",
+      "Bash(find:*)",
+      "Bash(pip show:*)",
+      "Bash(venv/Scripts/pip show:*)",
+      "Bash(venv/Scripts/pip install:*)",
+      "Bash(venv/Scripts/python -c ':*)"
     ]
   }
 }

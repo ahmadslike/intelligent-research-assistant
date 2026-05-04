@@ -14,7 +14,13 @@
       "Bash(pip show:*)",
       "Bash(venv/Scripts/pip show:*)",
       "Bash(venv/Scripts/pip install:*)",
-      "Bash(venv/Scripts/python -c ':*)"
+      "Bash(venv/Scripts/python -c ':*)",
+      "Bash(chmod +x:*)",
+      "Bash(bash \"C:/Users/HP/Desktop/intelligent-research-assistant/.claude/hooks/safety-check.sh\")",
+      "Bash(echo \"Exit code: $?\")",
+      "Bash(black --version)",
+      "Bash(bash \"C:/Users/HP/Desktop/intelligent-research-assistant/.claude/hooks/auto-format.sh\")",
+      "Bash(C:/Users/HP/Desktop/intelligent-research-assistant/venv/Scripts/black.exe:*)"
     ]
   }
 }

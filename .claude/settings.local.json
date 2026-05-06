@@ -20,7 +20,8 @@
       "Bash(echo \"Exit code: $?\")",
       "Bash(black --version)",
       "Bash(bash \"C:/Users/HP/Desktop/intelligent-research-assistant/.claude/hooks/auto-format.sh\")",
-      "Bash(C:/Users/HP/Desktop/intelligent-research-assistant/venv/Scripts/black.exe:*)"
+      "Bash(C:/Users/HP/Desktop/intelligent-research-assistant/venv/Scripts/black.exe:*)",
+      "Bash(git *)"
     ]
   }
 }

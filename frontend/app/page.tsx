@@ -24,23 +24,37 @@ export default function Home() {
     setError(null);
     setResult(null);
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 60_000);
+
     try {
       const res = await fetch("http://localhost:8000/research/full", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ topic: topic.trim() }),
+        signal: controller.signal,
       });
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.detail || "حدث خطأ في الخادم");
+        if (res.status >= 500) {
+          throw new Error("حدث خطأ في الخادم: " + (data.detail || res.statusText || res.status));
+        }
+        throw new Error(data.detail || `HTTP ${res.status}`);
       }
 
       const data: ResearchResponse = await res.json();
       setResult(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "تعذّر الاتصال بالخادم");
+      if (err instanceof Error && err.name === "AbortError") {
+        setError("استغرق الطلب وقتاً طويلاً. حاول مجدداً");
+      } else if (err instanceof TypeError) {
+        setError("تعذّر الاتصال بالخادم. تأكد من تشغيل الـbackend");
+      } else {
+        setError(err instanceof Error ? err.message : "حدث خطأ غير متوقع");
+      }
     } finally {
+      clearTimeout(timeoutId);
       setLoading(false);
     }
   }
@@ -73,6 +87,10 @@ export default function Home() {
           {loading ? "جارٍ البحث..." : "ابحث"}
         </button>
       </form>
+
+      {loading && (
+        <p className="text-sm text-zinc-500">جارٍ البحث... قد يستغرق دقيقة أو أكثر</p>
+      )}
 
       {error && (
         <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-red-800 text-sm">

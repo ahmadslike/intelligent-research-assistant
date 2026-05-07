@@ -25,7 +25,7 @@ export default function Home() {
     setResult(null);
 
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 60_000);
+    const timeoutId = setTimeout(() => controller.abort(), 120_000);
 
     try {
       const res = await fetch("http://localhost:8000/research/full", {
